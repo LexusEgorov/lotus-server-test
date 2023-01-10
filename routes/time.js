@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const stepTime = 180000;
+const stepTime = 118000;
 
 let timer = stepTime;
 let step = 1;
