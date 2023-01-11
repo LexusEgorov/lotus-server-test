@@ -10,7 +10,7 @@ app.use("/time", time);
 app.use("/data", data);
 
 const port = process.env.PORT || 9001;
-const db = 'mongodb+srv://Lotus-db:lotus-db@cluster0.jryvxcm.mongodb.net/?retryWrites=true&w=majority'
+const db = 'mongodb+srv://Lotus-db:lotus-db@cluster0.jryvxcm.mongodb.net/lotus?retryWrites=true&w=majority'
 
 mongoose
   .connect(db)
