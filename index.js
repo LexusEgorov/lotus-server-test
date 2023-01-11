@@ -1,11 +1,19 @@
 const express = require("express");
 const time = require("./routes/time");
 const data = require("./routes/data");
+const cors = require("cors");
 const { default: mongoose } = require('mongoose');
 
 const app = express();
-app.use(express.json());
 
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus: 200,
+} 
+
+app.use(express.json());
+app.use(cors(corsOptions));
 app.use("/time", time);
 app.use("/data", data);
 
