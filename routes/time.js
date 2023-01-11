@@ -34,6 +34,9 @@ router.get("/", async (req, res, next) => {
       nextStep();
       timeLeftUpdate = timeLeftUpdate - STEP_TIME;
     }
+
+    timeLeftUpdate = STEP_TIME - timeLeftUpdate;
+    
   } else {
     timeLeftUpdate = timeLeft - diff; 
   }
