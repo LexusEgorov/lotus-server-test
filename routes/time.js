@@ -15,6 +15,7 @@ let timeLeftUpdate = 0;
 let data = {};
 
 router.get("/", async (req, res, next) => {
+  const begin = performance.now();
   await LastUpdate
     .find()
     .then((updates) => data = updates[updates.length - 1])
@@ -55,6 +56,7 @@ router.get("/", async (req, res, next) => {
   return res.status(200).json({
     timeLeft: timeLeftUpdate,
     step: stepUpdate,
+    serverTime: performance.now() - begin,
   });
 });
 
