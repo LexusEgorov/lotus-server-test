@@ -13,9 +13,9 @@ const corsOptions = {
 } 
 
 app.use(express.json());
-app.use(cors(corsOptions));
 app.use("/time", time);
 app.use("/data", data);
+app.use(cors(corsOptions));
 
 const port = process.env.PORT || 9001;
 const db = 'mongodb+srv://Lotus-db:lotus-db@cluster0.jryvxcm.mongodb.net/lotus?retryWrites=true&w=majority'
